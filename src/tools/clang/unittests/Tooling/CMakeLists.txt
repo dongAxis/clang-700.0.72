@@ -1,0 +1,30 @@
+set(LLVM_LINK_COMPONENTS
+  Support
+  )
+
+add_clang_unittest(ToolingTests
+  CommentHandlerTest.cpp
+  CompilationDatabaseTest.cpp
+  ToolingTest.cpp
+  RecursiveASTVisitorTest.cpp
+  RecursiveASTVisitorTestCallVisitor.cpp
+  RecursiveASTVisitorTestDeclVisitor.cpp
+  RecursiveASTVisitorTestExprVisitor.cpp
+  RecursiveASTVisitorTestTypeLocVisitor.cpp
+  RefactoringTest.cpp
+  RewriterTest.cpp
+  RefactoringCallbacksTest.cpp
+  ReplacementsYamlTest.cpp
+  )
+
+target_link_libraries(ToolingTests
+  clangAST
+  clangASTMatchers
+  clangBasic
+  clangCodeGen
+  clangFrontend
+  clangLex
+  clangRewrite
+  clangTooling
+  clangToolingCore
+  )
